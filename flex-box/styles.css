@@ -1,0 +1,31 @@
+.container{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    height: 500px;
+    background-color: rgb(35, 22, 105);
+}
+.flex-item{
+    background-color: green;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    color: white;
+    border: solid yellow 5px;   
+}
+/* antra užduotis */
+.flex-container{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    height: 700px;
+    background-color: rgb(35, 22, 105);
+    flex-direction: column;
+}
+.flex-item1{
+background-color: beige;
+padding: 15px;
+margin: 15px;
+text-align: center;
+
+}

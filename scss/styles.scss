@@ -1,0 +1,82 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+}
+// 1 užduotis
+
+$primary-color: #3614f99e;
+$secondary-color: #e4fd00;
+
+body {
+  background-color: $primary-color;
+  color: $secondary-color;
+}
+
+// 2 užduotis
+
+@mixin box-shadow($x, $y, $blur, $color) {
+  -webkit-box-shadow: $x $y $blur $color;
+  -moz-box-shadow: $x $y $blur $color;
+  box-shadow: $x $y $blur $color;
+}
+
+.CTA {
+  @include box-shadow(2px, 2px, 5px, rgba(0, 0, 0, 0.3));
+  background-color: $primary-color;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
+// 3 užduoti
+.nav {
+    background-color: $primary-color;
+    border: 5px, solid white;
+    
+  
+    ul {
+      list-style: none;
+        
+      li {
+        display: inline-block;
+        margin-right: 10px;
+                  
+        a {
+          text-decoration: none;
+          color: white;
+            
+          &:hover {
+            color: $secondary-color;
+          }
+        }
+      }
+    }
+  }
+
+//   4 užduotis. Sukurkite ciklą, kuris gražins jum teksto spalvą iteruodamas per kintamajį “$themes”.
+//   Jeigu $theme yra “dark” - tekstas turėtų būti baltas, jeigu $theme yra “light” - atvirkščiai.
+$themes: light, dark;
+
+@each $theme in $themes {
+  .#{$theme}-theme {
+    @if $theme == light {
+      background-color: rgb(252, 252, 171);
+      color: blue;
+    } @else {
+      background-color: black;
+      color: yellow;
+    }
+  }
+}
+// // 5 užduotis. Sukurkite @mixin pavadinimu ‘responsive’ 3 skirtingiem ekrano lūžio taškams. 
+// Panaudokite šį @mixin naudodami @include žodelį ir jo viduje patalpinkite savo norimą stilių. 
+// Stilių taip pat apsirašykite @mixin komponente.
+
+
+
+
+// 6 užduotis. Sukurkite funkciją, kuri priima aukščio ir pločio parametrus ir gražina jum šių parametrų sumą,
+// ją padauginus iį 0.1. Priskirkite šią funkciją sugalvoto mixino viduje, prie border-radius: parametro. 
+//  mixiną prie 3 klasių. Kiekvieną kartą iškviečiant mixiną, suteikite jam kitus parametrus. 
+//  (.klase -> @include mixin(kintamūjų reikšmės) -> @mixin(kintamieji) -> border-radius: 
+//  funkcija(kintamieji) -> @function(kintamūjų reikšmės)
